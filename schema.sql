@@ -4,3 +4,4 @@ CREATE TABLE question (id INT AUTO_INCREMENT PRIMARY KEY,domain VARCHAR(2) NOT N
 CREATE TABLE attempt (id INT AUTO_INCREMENT PRIMARY KEY,user_id INT NOT NULL,mode VARCHAR(20) NOT NULL,started_at DATETIME,deadline DATETIME NOT NULL,submitted_at DATETIME,score DOUBLE,max_points DOUBLE,FOREIGN KEY(user_id) REFERENCES user(id));
 CREATE TABLE attempt_item (id INT AUTO_INCREMENT PRIMARY KEY,attempt_id INT NOT NULL,question_id INT NOT NULL,position INT NOT NULL,points DOUBLE NOT NULL,selected INT,FOREIGN KEY(attempt_id) REFERENCES attempt(id),FOREIGN KEY(question_id) REFERENCES question(id));
 CREATE TABLE audit (id INT AUTO_INCREMENT PRIMARY KEY,user_id INT,action VARCHAR(100),details TEXT,created_at DATETIME);
+CREATE TABLE email_verification (user_id INT PRIMARY KEY, verified_at DATETIME, signature VARCHAR(64), sent_at DATETIME, expires_at DATETIME, attempts INT NOT NULL DEFAULT 0, FOREIGN KEY(user_id) REFERENCES user(id));

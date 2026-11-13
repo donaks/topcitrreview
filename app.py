@@ -5,10 +5,11 @@ from flask import Flask, request, redirect, url_for, session, render_template, f
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func
 from werkzeug.security import generate_password_hash, check_password_hash
+from verification import issue_code, accept_code
 from dotenv import load_dotenv
 load_dotenv()
 app=Flask(__name__)
-app.config.update(SECRET_KEY=os.getenv('SECRET_KEY','dev-only-change-me'),SQLALCHEMY_DATABASE_URI=os.getenv('DATABASE_URL','sqlite:///local_dev.db'),SQLALCHEMY_TRACK_MODIFICATIONS=False,SESSION_COOKIE_HTTPONLY=True,SESSION_COOKIE_SAMESITE='Lax',SESSION_COOKIE_SECURE=os.getenv('SESSION_COOKIE_SECURE','0')=='1',PERMANENT_SESSION_LIFETIME=timedelta(hours=8),MAX_CONTENT_LENGTH=2*1024*1024)
+app.config.update(SECRET_KEY=os.environ['SECRET_KEY'],SQLALCHEMY_DATABASE_URI=os.getenv('DATABASE_URL','sqlite:///local_dev.db'),SQLALCHEMY_TRACK_MODIFICATIONS=False,SESSION_COOKIE_HTTPONLY=True,SESSION_COOKIE_SAMESITE='Lax',SESSION_COOKIE_SECURE=os.getenv('SESSION_COOKIE_SECURE','0')=='1',PERMANENT_SESSION_LIFETIME=timedelta(hours=8),MAX_CONTENT_LENGTH=2*1024*1024)
 db=SQLAlchemy(app)
 DOMAINS={'M1':'Software Development','M2':'Data Management','M3':'Systems Architecture & Information Security','M4':'IT Business'}
 WEIGHTS={'M1':365,'M2':265,'M3':235,'M4':135}
@@ -16,6 +17,14 @@ COUNTS={'M1':21,'M2':19,'M3':18,'M4':17}
 def now():return datetime.now(timezone.utc)
 class User(db.Model):
  id=db.Column(db.Integer,primary_key=True);email=db.Column(db.String(190),unique=True,nullable=False);name=db.Column(db.String(160),nullable=False);password_hash=db.Column(db.String(255),nullable=False);role=db.Column(db.String(20),nullable=False,default='student');created_at=db.Column(db.DateTime(timezone=True),default=now)
+class EmailVerification(db.Model):
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
+    verified_at = db.Column(db.DateTime)
+    signature = db.Column(db.String(64))
+    sent_at = db.Column(db.DateTime)
+    expires_at = db.Column(db.DateTime)
+    attempts = db.Column(db.Integer, nullable=False, default=0)
+
 class Question(db.Model):
  id=db.Column(db.Integer,primary_key=True);domain=db.Column(db.String(2),nullable=False,index=True);topic=db.Column(db.String(120),nullable=False);difficulty=db.Column(db.String(20),default='medium');kind=db.Column(db.String(20),default='single');stem=db.Column(db.Text,nullable=False);options_json=db.Column(db.Text,nullable=False);answer=db.Column(db.Integer,nullable=False);explanation=db.Column(db.Text,nullable=False);source=db.Column(db.String(255),default='Original instructional item');status=db.Column(db.String(20),default='draft');created_at=db.Column(db.DateTime(timezone=True),default=now)
  @property
@@ -31,7 +40,7 @@ def current_user():return db.session.get(User,session.get('uid')) if session.get
 def context():return dict(me=current_user(),domains=DOMAINS)
 @app.before_request
 def csrf_check():
- if request.method in ('POST','PUT','PATCH','DELETE') and request.form.get('_csrf')!=session.get('csrf'):abort(400,'Invalid CSRF token')
+ if request.method in ('POST','PUT','PATCH','DELETE') and (not session.get('csrf') or request.form.get('_csrf')!=session['csrf']):abort(400,'Invalid CSRF token')
  if 'csrf' not in session:session['csrf']=secrets.token_urlsafe(24)
 @app.context_processor
 def csrf():return dict(csrf=session.get('csrf',''))
@@ -59,9 +68,40 @@ def login():
  if request.method=='POST':
   u=User.query.filter_by(email=request.form.get('email','').strip().lower()).first()
   if u and check_password_hash(u.password_hash,request.form.get('password','')):
-   session.clear();session['uid']=u.id;session['csrf']=secrets.token_urlsafe(24);session.permanent=True;return redirect(url_for('dashboard'))
+   if u.role == 'student':
+    verification = db.session.get(EmailVerification, u.id)
+    if verification is None or verification.verified_at is None:
+     session.clear()
+     session['pending_student'] = u.id
+     session['csrf'] = secrets.token_urlsafe(24)
+     flash(issue_code(db, EmailVerification, u))
+     return redirect(url_for('verify_email'))
+   return start_session(u.id)
   flash('Invalid credentials')
  return render_template('login.html')
+def start_session(user_id):
+    session.clear()
+    session['uid'] = user_id
+    session['csrf'] = secrets.token_urlsafe(24)
+    session.permanent = True
+    return redirect(url_for('dashboard'))
+
+@app.route('/verify-email', methods=['GET', 'POST'])
+def verify_email():
+    user_id = session.get('pending_student')
+    user = db.session.get(User, user_id) if user_id else None
+    if user is None or user.role != 'student':
+        return redirect(url_for('login'))
+    if request.method == 'POST':
+        if request.form.get('action') == 'resend':
+            flash(issue_code(db, EmailVerification, user))
+        elif accept_code(db, EmailVerification, user_id, request.form.get('code', '').strip()):
+            return start_session(user_id)
+        else:
+            flash('Invalid or expired code. Use the latest email or request another code.')
+        return redirect(url_for('verify_email'))
+    return render_template('verify_email.html', email=user.email)
+
 @app.post('/logout')
 def logout():session.clear();return redirect(url_for('index'))
 @app.route('/register',methods=['GET','POST'])
@@ -69,6 +109,7 @@ def register():
  if request.method=='POST':
   email=request.form.get('email','').strip().lower();pw=request.form.get('password','');name=request.form.get('name','').strip()
   if len(pw)<12 or len(name)<2 or '@' not in email:flash('Provide a name, valid email and password of at least 12 characters')
+  elif pw!=request.form.get('confirm_password'):flash('Passwords do not match')
   elif User.query.filter_by(email=email).first():flash('Email already registered')
   else:
    db.session.add(User(email=email,name=name,password_hash=generate_password_hash(pw),role='student'));db.session.commit();flash('Account created. Please sign in.');return redirect(url_for('login'))

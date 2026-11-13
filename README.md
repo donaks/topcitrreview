@@ -88,3 +88,12 @@ SQLAlchemy creates the MySQL schema through `flask init-db`. See `schema.sql` fo
 ## Local development
 
 For a quick test, omit DATABASE_URL to use SQLite locally, set `SESSION_COOKIE_SECURE=0`, then run init-db/create-admin/seed and `flask --app app run`. **MySQL is the recommended deployment database.**
+
+## Student email verification
+
+Set a random SECRET_KEY and configure SMTP_HOST, SMTP_PORT, SMTP_FROM,
+SMTP_USERNAME and SMTP_PASSWORD in the application environment. Use a sender
+authorized by your mail provider. Run Flask's init-db command before restarting
+the application to create the email_verification table on an existing database.
+Existing students verify at their next password login. Administrators and
+instructors continue using their existing sign-in flow.
