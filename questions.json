@@ -1,0 +1,1702 @@
+[
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which data structure uses last-in-first-out ordering?",
+    "options": [
+      "Heap",
+      "Graph",
+      "Queue",
+      "Stack"
+    ],
+    "answer": 3,
+    "explanation": "A stack removes the most recently pushed item first.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What is the worst-case time complexity of linear search in an unsorted list?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(log n)",
+      "O(1)"
+    ],
+    "answer": 0,
+    "explanation": "Linear search may inspect every item.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which search requires sorted input for its standard implementation?",
+    "options": [
+      "Binary search",
+      "Linear search",
+      "Depth-first search",
+      "Breadth-first search"
+    ],
+    "answer": 0,
+    "explanation": "Binary search uses the ordering to discard half the search space.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What is the worst-case time complexity of binary search?",
+    "options": [
+      "O(1)",
+      "O(n\u00b2)",
+      "O(log n)",
+      "O(n)"
+    ],
+    "answer": 2,
+    "explanation": "The search interval halves each iteration.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which structure is FIFO?",
+    "options": [
+      "Tree",
+      "Hash set",
+      "Stack",
+      "Queue"
+    ],
+    "answer": 3,
+    "explanation": "A queue serves the earliest enqueued item first.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "What does a base case do in recursion?",
+    "options": [
+      "Allocates a database",
+      "Sorts the input",
+      "Stops recursive expansion",
+      "Starts a thread"
+    ],
+    "answer": 2,
+    "explanation": "A base case terminates recursive calls.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What is the complexity of two nested loops each executing n times?",
+    "options": [
+      "O(2n)",
+      "O(n)",
+      "O(n\u00b2)",
+      "O(log n)"
+    ],
+    "answer": 2,
+    "explanation": "The loop body executes n times for each of n outer iterations.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which sorting algorithm repeatedly selects the smallest remaining element?",
+    "options": [
+      "Selection sort",
+      "Insertion sort",
+      "Merge sort",
+      "Quick sort"
+    ],
+    "answer": 0,
+    "explanation": "Selection sort selects an extremal item for each position.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which algorithm traverses a graph level by level?",
+    "options": [
+      "Depth-first search",
+      "Breadth-first search",
+      "Binary search",
+      "Insertion sort"
+    ],
+    "answer": 1,
+    "explanation": "BFS uses a queue to visit vertices by distance in edges.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which data structure typically supports average O(1) key lookup?",
+    "options": [
+      "Binary heap",
+      "Linked list",
+      "Hash table",
+      "Unsorted array"
+    ],
+    "answer": 2,
+    "explanation": "Hashing maps keys to buckets for expected constant-time lookup.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What does encapsulation primarily protect?",
+    "options": [
+      "CPU scheduling",
+      "Internal object state",
+      "Network routing",
+      "Database indexing"
+    ],
+    "answer": 1,
+    "explanation": "Encapsulation restricts direct access to implementation details.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which OOP feature allows a subclass to reuse superclass behavior?",
+    "options": [
+      "Normalization",
+      "Aggregation",
+      "Inheritance",
+      "Compilation"
+    ],
+    "answer": 2,
+    "explanation": "Inheritance establishes an is-a relationship.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which UML diagram emphasizes object interactions over time?",
+    "options": [
+      "Sequence diagram",
+      "Deployment diagram",
+      "Class diagram",
+      "Component diagram"
+    ],
+    "answer": 0,
+    "explanation": "Sequence diagrams order messages between participants.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which UML diagram depicts static classes and relationships?",
+    "options": [
+      "Sequence diagram",
+      "State diagram",
+      "Activity diagram",
+      "Class diagram"
+    ],
+    "answer": 3,
+    "explanation": "Class diagrams show attributes, operations and associations.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which requirement describes response time?",
+    "options": [
+      "Database key",
+      "Use case actor",
+      "Functional requirement",
+      "Nonfunctional requirement"
+    ],
+    "answer": 3,
+    "explanation": "Performance is a quality attribute rather than a business operation.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which SDLC model delivers increments through short iterations?",
+    "options": [
+      "Agile",
+      "Waterfall",
+      "Big bang only",
+      "V-model only"
+    ],
+    "answer": 0,
+    "explanation": "Agile approaches encourage iterative feedback and delivery.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which test checks an individual function?",
+    "options": [
+      "Unit test",
+      "Acceptance test",
+      "System test",
+      "Load test"
+    ],
+    "answer": 0,
+    "explanation": "Unit tests isolate small software components.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which test ensures old behavior still works after changes?",
+    "options": [
+      "Smoke-only deployment",
+      "Static linking",
+      "Penetration test",
+      "Regression test"
+    ],
+    "answer": 3,
+    "explanation": "Regression testing catches newly introduced defects.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which maintenance type fixes an existing defect?",
+    "options": [
+      "Preventive",
+      "Perfective",
+      "Corrective",
+      "Adaptive"
+    ],
+    "answer": 2,
+    "explanation": "Corrective maintenance resolves observed faults.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which maintenance type accommodates a new operating environment?",
+    "options": [
+      "Perfective",
+      "Adaptive",
+      "Corrective",
+      "Emergency rollback"
+    ],
+    "answer": 1,
+    "explanation": "Adaptive maintenance responds to environmental changes.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "What is a Git commit?",
+    "options": [
+      "A running process",
+      "A database index",
+      "A recorded repository snapshot",
+      "A network packet"
+    ],
+    "answer": 2,
+    "explanation": "A commit records a version of tracked changes.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which HTTP method is conventionally used to retrieve a resource?",
+    "options": [
+      "GET",
+      "POST",
+      "PATCH",
+      "DELETE"
+    ],
+    "answer": 0,
+    "explanation": "GET requests retrieve representations.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What does an API contract specify?",
+    "options": [
+      "Expected requests and responses",
+      "CPU voltage",
+      "Cable pinout",
+      "Disk sector size"
+    ],
+    "answer": 0,
+    "explanation": "An API contract defines interface behavior.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "What is a race condition?",
+    "options": [
+      "Outcome depends on concurrent execution order",
+      "A syntax error",
+      "A cache hit",
+      "A missing foreign key"
+    ],
+    "answer": 0,
+    "explanation": "Unsynchronized operations can yield timing-dependent outcomes.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What is a pure function?",
+    "options": [
+      "Changes a global variable",
+      "Same inputs produce same output without side effects",
+      "Always runs on a GPU",
+      "Writes to a file"
+    ],
+    "answer": 1,
+    "explanation": "Pure functions are deterministic and avoid observable side effects.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which design principle favors depending on abstractions?",
+    "options": [
+      "Duplicated logic",
+      "Dependency inversion",
+      "Tight coupling",
+      "Global state"
+    ],
+    "answer": 1,
+    "explanation": "Dependency inversion reduces coupling to concrete implementations.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which test input is most useful for an allowed age range 18\u201360?",
+    "options": [
+      "20, 25, 30, 35",
+      "25, 30, 35, 40",
+      "22, 28, 33, 44",
+      "17, 18, 60, 61"
+    ],
+    "answer": 3,
+    "explanation": "Boundary testing checks values at and just outside limits.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What is a supervised classification task?",
+    "options": [
+      "Finding frequent itemsets",
+      "Predicting labeled categories",
+      "Grouping unlabeled records",
+      "Compressing files"
+    ],
+    "answer": 1,
+    "explanation": "Classification learns from examples with known category labels.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which metric measures correctly predicted positives among all predicted positives?",
+    "options": [
+      "Precision",
+      "Recall",
+      "Specificity",
+      "Accuracy"
+    ],
+    "answer": 0,
+    "explanation": "Precision is TP divided by TP plus FP.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Software Development",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "What does overfitting commonly cause?",
+    "options": [
+      "Strong training results but weak unseen-data results",
+      "Identical predictions for all inputs",
+      "A compiler failure",
+      "Guaranteed perfect generalization"
+    ],
+    "answer": 0,
+    "explanation": "Overfitting memorizes patterns that do not generalize.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which key uniquely identifies each row in a relational table?",
+    "options": [
+      "Index name",
+      "Foreign key",
+      "View name",
+      "Primary key"
+    ],
+    "answer": 3,
+    "explanation": "A primary key enforces row identity.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What does a foreign key enforce?",
+    "options": [
+      "Encryption",
+      "File compression",
+      "Sorting order",
+      "Referential integrity"
+    ],
+    "answer": 3,
+    "explanation": "Foreign keys constrain references between tables.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which normal form requires atomic attribute values?",
+    "options": [
+      "BCNF only",
+      "Third normal form",
+      "First normal form",
+      "Second normal form"
+    ],
+    "answer": 2,
+    "explanation": "1NF requires atomic values and no repeating groups.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which normal form eliminates partial dependency on a composite candidate key?",
+    "options": [
+      "Second normal form",
+      "First normal form",
+      "Unnormalized form",
+      "Third normal form only"
+    ],
+    "answer": 0,
+    "explanation": "2NF requires non-prime attributes to depend on the whole candidate key.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which normal form addresses transitive non-key dependencies?",
+    "options": [
+      "Second normal form only",
+      "Unnormalized form",
+      "Third normal form",
+      "First normal form"
+    ],
+    "answer": 2,
+    "explanation": "3NF reduces dependencies through other non-key attributes.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which SQL keyword combines rows from matching tables?",
+    "options": [
+      "GROUP",
+      "JOIN",
+      "ORDER",
+      "LIMIT"
+    ],
+    "answer": 1,
+    "explanation": "JOIN relates rows across tables.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which join preserves unmatched rows from the left table?",
+    "options": [
+      "CROSS JOIN",
+      "LEFT JOIN",
+      "SELF JOIN",
+      "INNER JOIN"
+    ],
+    "answer": 1,
+    "explanation": "LEFT JOIN includes all left-side rows.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which clause filters rows before grouping?",
+    "options": [
+      "LIMIT",
+      "HAVING",
+      "WHERE",
+      "ORDER BY"
+    ],
+    "answer": 2,
+    "explanation": "WHERE filters source rows before aggregate grouping.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which clause filters aggregate groups?",
+    "options": [
+      "SELECT",
+      "FROM",
+      "HAVING",
+      "WHERE"
+    ],
+    "answer": 2,
+    "explanation": "HAVING filters grouped results.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which aggregate counts non-NULL values in a column?",
+    "options": [
+      "MAX(column)",
+      "COUNT(column)",
+      "SUM(column)",
+      "AVG(column)"
+    ],
+    "answer": 1,
+    "explanation": "COUNT(column) excludes NULL values.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What does COUNT(*) count?",
+    "options": [
+      "Only unique values",
+      "All rows in the result group",
+      "Only positive numbers",
+      "Only non-NULL columns"
+    ],
+    "answer": 1,
+    "explanation": "COUNT(*) counts rows regardless of column NULLs.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which SQL keyword removes duplicate result rows?",
+    "options": [
+      "ORDER BY",
+      "HAVING",
+      "UNION ALL",
+      "DISTINCT"
+    ],
+    "answer": 3,
+    "explanation": "DISTINCT eliminates duplicate selected tuples.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which SQL clause sorts results?",
+    "options": [
+      "FROM",
+      "WHERE",
+      "GROUP BY",
+      "ORDER BY"
+    ],
+    "answer": 3,
+    "explanation": "ORDER BY specifies result ordering.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which function assigns tied ranks without gaps?",
+    "options": [
+      "NTILE",
+      "ROW_NUMBER",
+      "LEAD",
+      "DENSE_RANK"
+    ],
+    "answer": 3,
+    "explanation": "DENSE_RANK does not skip rank numbers after ties.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which transaction property means all-or-nothing?",
+    "options": [
+      "Atomicity",
+      "Isolation",
+      "Consistency",
+      "Durability"
+    ],
+    "answer": 0,
+    "explanation": "Atomicity commits or rolls back the transaction as a unit.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which property ensures committed changes survive a crash?",
+    "options": [
+      "Isolation",
+      "Durability",
+      "Atomicity",
+      "Consistency"
+    ],
+    "answer": 1,
+    "explanation": "Durability protects committed results.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What does an index generally improve?",
+    "options": [
+      "Storage efficiency always",
+      "Lookup performance for suitable predicates",
+      "Every write speed",
+      "Automatic normalization"
+    ],
+    "answer": 1,
+    "explanation": "Indexes can speed lookups at additional storage and write cost.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which operation combines datasets vertically while removing duplicates?",
+    "options": [
+      "INTERSECT",
+      "UNION",
+      "CROSS JOIN",
+      "JOIN"
+    ],
+    "answer": 1,
+    "explanation": "UNION merges compatible result sets and removes duplicates.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which SQL expression tests missing values?",
+    "options": [
+      "IS NULL",
+      "= NULL",
+      "== NULL",
+      "LIKE NULL"
+    ],
+    "answer": 0,
+    "explanation": "NULL is tested using IS NULL.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which database model commonly stores documents as JSON-like records?",
+    "options": [
+      "Relational table only",
+      "Document database",
+      "Hierarchical file only",
+      "Graph edge only"
+    ],
+    "answer": 1,
+    "explanation": "Document stores hold semi-structured documents.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which technique groups unlabeled similar records?",
+    "options": [
+      "Validation",
+      "Classification",
+      "Regression",
+      "Clustering"
+    ],
+    "answer": 3,
+    "explanation": "Clustering discovers groups without target labels.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which analysis predicts a numeric outcome?",
+    "options": [
+      "Classification",
+      "Association rules",
+      "Clustering",
+      "Regression"
+    ],
+    "answer": 3,
+    "explanation": "Regression estimates continuous values.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which process removes duplicate records?",
+    "options": [
+      "Tokenization",
+      "Replication",
+      "Encryption",
+      "Deduplication"
+    ],
+    "answer": 3,
+    "explanation": "Deduplication identifies and removes repeated records.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Why separate training and test data?",
+    "options": [
+      "To guarantee accuracy",
+      "To estimate generalization to unseen records",
+      "To eliminate all bias",
+      "To make training slower"
+    ],
+    "answer": 1,
+    "explanation": "Holdout evaluation measures out-of-sample behavior.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which visual is most suitable for trends over time?",
+    "options": [
+      "Pie chart",
+      "Line chart",
+      "Treemap",
+      "Single KPI card"
+    ],
+    "answer": 1,
+    "explanation": "Line charts reveal temporal movement.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What is a data warehouse primarily optimized for?",
+    "options": [
+      "Packet filtering",
+      "Analytical queries",
+      "DNS resolution",
+      "CPU instruction execution"
+    ],
+    "answer": 1,
+    "explanation": "Warehouses support consolidated analytical workloads.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data Management",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "What is a fact table commonly used to store?",
+    "options": [
+      "Only network routes",
+      "Only source code",
+      "Measures and foreign keys to dimensions",
+      "Only user passwords"
+    ],
+    "answer": 2,
+    "explanation": "Fact tables capture measurable business events.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which component executes machine instructions?",
+    "options": [
+      "CPU",
+      "Monitor",
+      "Switch",
+      "SSD"
+    ],
+    "answer": 0,
+    "explanation": "The CPU executes instructions.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which memory is normally volatile?",
+    "options": [
+      "RAM",
+      "HDD",
+      "SSD",
+      "ROM"
+    ],
+    "answer": 0,
+    "explanation": "RAM loses its contents when power is removed.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which memory is typically fastest?",
+    "options": [
+      "Optical disk",
+      "Hard disk",
+      "CPU cache",
+      "Network drive"
+    ],
+    "answer": 2,
+    "explanation": "Cache is placed near CPU execution units.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What is a process?",
+    "options": [
+      "A database index",
+      "A running program with execution context",
+      "A network address",
+      "A file extension"
+    ],
+    "answer": 1,
+    "explanation": "A process has its own execution state and resources.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What is a thread?",
+    "options": [
+      "A physical Ethernet cable",
+      "An encryption key",
+      "An execution unit within a process",
+      "A table constraint"
+    ],
+    "answer": 2,
+    "explanation": "Threads share process resources while executing independently.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which OS function selects the next runnable task?",
+    "options": [
+      "Compiler",
+      "DNS resolver",
+      "Scheduler",
+      "Linker"
+    ],
+    "answer": 2,
+    "explanation": "The scheduler allocates CPU execution time.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What is a deadlock?",
+    "options": [
+      "Tasks wait indefinitely on held resources",
+      "A completed transaction",
+      "A successful backup",
+      "A cache refresh"
+    ],
+    "answer": 0,
+    "explanation": "Circular resource waiting can prevent progress.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which protocol provides reliable ordered byte-stream transport?",
+    "options": [
+      "UDP",
+      "TCP",
+      "IP",
+      "ARP"
+    ],
+    "answer": 1,
+    "explanation": "TCP sequences and retransmits data.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which protocol is connectionless at the transport layer?",
+    "options": [
+      "TLS",
+      "SSH",
+      "TCP",
+      "UDP"
+    ],
+    "answer": 3,
+    "explanation": "UDP sends datagrams without connection establishment.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What does DNS normally resolve?",
+    "options": [
+      "Passwords to hashes",
+      "Hostnames to resource records such as IP addresses",
+      "RAM to disk sectors",
+      "SQL to machine code"
+    ],
+    "answer": 1,
+    "explanation": "DNS maps domain names to records.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which protocol secures HTTP traffic with TLS?",
+    "options": [
+      "SMTP without TLS",
+      "FTP",
+      "Telnet",
+      "HTTPS"
+    ],
+    "answer": 3,
+    "explanation": "HTTPS carries HTTP over TLS.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "How many total IPv4 addresses are in a /27 block?",
+    "options": [
+      "32",
+      "30",
+      "64",
+      "16"
+    ],
+    "answer": 0,
+    "explanation": "A /27 leaves five address bits, yielding 2^5 addresses.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What is the typical usable host count of a conventional IPv4 /26 subnet?",
+    "options": [
+      "64",
+      "62",
+      "126",
+      "30"
+    ],
+    "answer": 1,
+    "explanation": "A /26 has 64 addresses, with network and broadcast reserved.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What does the CIA triad stand for?",
+    "options": [
+      "Caching, Indexing, Auditing",
+      "Consistency, Isolation, Atomicity",
+      "Control, Identity, Authentication",
+      "Confidentiality, Integrity, Availability"
+    ],
+    "answer": 3,
+    "explanation": "CIA names three fundamental security objectives.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which mechanism verifies a user identity?",
+    "options": [
+      "Authorization",
+      "Accounting",
+      "Authentication",
+      "Compression"
+    ],
+    "answer": 2,
+    "explanation": "Authentication establishes claimed identity.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which mechanism determines permitted actions?",
+    "options": [
+      "Encryption",
+      "Hashing",
+      "Authentication",
+      "Authorization"
+    ],
+    "answer": 3,
+    "explanation": "Authorization controls access after identity is established.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which control reduces risk from stolen passwords?",
+    "options": [
+      "Disabling logs",
+      "Shared credentials",
+      "Plaintext storage",
+      "Multifactor authentication"
+    ],
+    "answer": 3,
+    "explanation": "MFA requires another independent factor.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which technique protects passwords at rest?",
+    "options": [
+      "Reversible encoding",
+      "Salted adaptive password hashing",
+      "Base64 only",
+      "Plaintext storage"
+    ],
+    "answer": 1,
+    "explanation": "Adaptive password hashes resist offline guessing.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which coding practice best prevents SQL injection?",
+    "options": [
+      "Renaming tables",
+      "Parameterized queries",
+      "String concatenation",
+      "Disabling indexes"
+    ],
+    "answer": 1,
+    "explanation": "Parameters separate values from query structure.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What does least privilege require?",
+    "options": [
+      "Disable authorization",
+      "Grant only necessary access",
+      "Grant all staff admin rights",
+      "Share accounts"
+    ],
+    "answer": 1,
+    "explanation": "Minimum permissions reduce exposure.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which security control filters traffic by rules?",
+    "options": [
+      "Load balancer only",
+      "Text editor",
+      "Compiler",
+      "Firewall"
+    ],
+    "answer": 3,
+    "explanation": "Firewalls enforce network traffic policy.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What does encryption in transit primarily protect?",
+    "options": [
+      "CPU scheduling",
+      "Database normalization",
+      "Data while moving across networks",
+      "File naming"
+    ],
+    "answer": 2,
+    "explanation": "TLS protects communication confidentiality and integrity.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which attack injects malicious scripts into a web page viewed by others?",
+    "options": [
+      "SQL indexing",
+      "Packet routing",
+      "Data compression",
+      "Cross-site scripting"
+    ],
+    "answer": 3,
+    "explanation": "XSS exploits unsafe handling of untrusted web content.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "What is a backup recovery objective measured as allowable data loss?",
+    "options": [
+      "RTO",
+      "MTBF",
+      "RPO",
+      "CPU utilization"
+    ],
+    "answer": 2,
+    "explanation": "Recovery Point Objective measures acceptable data loss in time.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Systems and Security",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which recovery metric targets maximum restoration time?",
+    "options": [
+      "RTO",
+      "Throughput",
+      "RPO",
+      "Latency percentile"
+    ],
+    "answer": 0,
+    "explanation": "Recovery Time Objective measures desired recovery duration.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which analysis identifies strengths, weaknesses, opportunities and threats?",
+    "options": [
+      "UML sequence",
+      "ERD",
+      "TCP/IP",
+      "SWOT"
+    ],
+    "answer": 3,
+    "explanation": "SWOT supports strategic assessment.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What is a KPI?",
+    "options": [
+      "A programming syntax rule",
+      "A network routing protocol",
+      "A database primary key",
+      "A measurable performance indicator"
+    ],
+    "answer": 3,
+    "explanation": "KPIs quantify progress toward objectives.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which system integrates finance, procurement and inventory workflows?",
+    "options": [
+      "DNS",
+      "ERP",
+      "Firewall",
+      "IDE"
+    ],
+    "answer": 1,
+    "explanation": "ERP integrates core enterprise processes.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which system focuses on customer interactions?",
+    "options": [
+      "CRM",
+      "ETL",
+      "CPU",
+      "VPN"
+    ],
+    "answer": 0,
+    "explanation": "CRM manages customer relationships.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What does ROI compare?",
+    "options": [
+      "Only network speed",
+      "Only revenue",
+      "Only staff count",
+      "Net gain relative to investment cost"
+    ],
+    "answer": 3,
+    "explanation": "ROI measures return compared with cost.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which chart displays project tasks along a timeline?",
+    "options": [
+      "Class diagram",
+      "Gantt chart",
+      "Packet trace",
+      "ERD"
+    ],
+    "answer": 1,
+    "explanation": "Gantt charts visualize schedules and durations.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What determines the minimum project duration in a dependency network?",
+    "options": [
+      "Largest team",
+      "Cheapest activity",
+      "Most frequent meeting",
+      "Critical path"
+    ],
+    "answer": 3,
+    "explanation": "The critical path is the longest dependency chain.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which document breaks a project into manageable deliverables?",
+    "options": [
+      "Database log",
+      "Routing table",
+      "Source map",
+      "Work Breakdown Structure"
+    ],
+    "answer": 3,
+    "explanation": "A WBS decomposes project scope.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which process assesses proposed scope changes before approval?",
+    "options": [
+      "Change control",
+      "Code formatting",
+      "Disk cleanup",
+      "DNS caching"
+    ],
+    "answer": 0,
+    "explanation": "Change control evaluates impact and authorization.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Who is a stakeholder?",
+    "options": [
+      "Only a vendor",
+      "Only the auditor",
+      "Only the project developer",
+      "A person or group affected by or influencing a project"
+    ],
+    "answer": 3,
+    "explanation": "Stakeholders have interests or influence in outcomes.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which action best follows data minimization?",
+    "options": [
+      "Collect only data needed for a defined purpose",
+      "Publish raw records",
+      "Collect all available personal data",
+      "Retain data indefinitely"
+    ],
+    "answer": 0,
+    "explanation": "Data minimization limits unnecessary collection.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which licensing issue arises when using proprietary code without permission?",
+    "options": [
+      "Automatic patent grant",
+      "Guaranteed public-domain use",
+      "Potential copyright infringement",
+      "No legal concern"
+    ],
+    "answer": 2,
+    "explanation": "Unauthorized copying can violate copyright.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "What does an SLA commonly define?",
+    "options": [
+      "CPU instruction formats",
+      "Student grades",
+      "Service performance commitments",
+      "Programming language syntax"
+    ],
+    "answer": 2,
+    "explanation": "SLAs specify measurable service expectations.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Which activity identifies potential events that threaten project objectives?",
+    "options": [
+      "Graphic design",
+      "Unit compilation",
+      "Database indexing",
+      "Risk assessment"
+    ],
+    "answer": 3,
+    "explanation": "Risk assessment evaluates likelihood and impact.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which metric measures the percentage of time a service is available?",
+    "options": [
+      "Lines of code",
+      "Screen resolution",
+      "Uptime",
+      "Number of meetings"
+    ],
+    "answer": 2,
+    "explanation": "Availability is often reported as uptime percentage.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which approach improves a business process by removing unnecessary steps?",
+    "options": [
+      "Vendor lock-in",
+      "Scope creep",
+      "Credential sharing",
+      "Process improvement"
+    ],
+    "answer": 3,
+    "explanation": "Process improvement targets efficiency and outcomes.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "What does a business case justify?",
+    "options": [
+      "Why an investment is worthwhile",
+      "Only the file format",
+      "Only the color palette",
+      "Only the source-code style"
+    ],
+    "answer": 0,
+    "explanation": "A business case compares costs, benefits and risks.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "IT Business",
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which role is accountable for prioritizing product backlog items in Scrum?",
+    "options": [
+      "Database Administrator",
+      "Security Guard",
+      "Product Owner",
+      "Network Operator"
+    ],
+    "answer": 2,
+    "explanation": "The Product Owner orders backlog work to maximize value.",
+    "source": "Original instructional item; not an official TOPCIT question",
+    "status": "approved"
+  }
+]

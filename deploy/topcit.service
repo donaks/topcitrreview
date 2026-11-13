@@ -1,0 +1,13 @@
+[Unit]
+Description=TOPCIT ReviewBank
+After=network.target mysql.service
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/topcit_reviewbank
+EnvironmentFile=/opt/topcit_reviewbank/.env
+ExecStart=/opt/topcit_reviewbank/.venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 app:app
+Restart=always
+RestartSec=5
+[Install]
+WantedBy=multi-user.target
