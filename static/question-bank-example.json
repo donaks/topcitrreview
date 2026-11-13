@@ -1,0 +1,19 @@
+[
+  {
+    "domain": "M1",
+    "topic": "Boundary testing",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A discount starts at 20 items. Which pair most directly tests the change in eligibility?",
+    "options": [
+      "10 and 30",
+      "20 and 21",
+      "19 and 20",
+      "18 and 19"
+    ],
+    "answer": 2,
+    "explanation": "19 is the last ineligible quantity and 20 is the first eligible quantity.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  }
+]

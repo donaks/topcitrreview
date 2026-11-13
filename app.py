@@ -1,4 +1,4 @@
-import os, json, csv, io, random, secrets
+import os, json, random, secrets
 from datetime import datetime, timezone, timedelta
 from functools import wraps
 from flask import Flask, request, redirect, url_for, session, render_template, flash, Response, abort
@@ -50,17 +50,6 @@ def login_required(fn):
   if not current_user():return redirect(url_for('login'))
   return fn(*a,**k)
  return wrapper
-def roles(*allowed):
- def deco(fn):
-  @wraps(fn)
-  @login_required
-  def wrapper(*a,**k):
-   if current_user().role not in allowed:abort(403)
-   return fn(*a,**k)
-  return wrapper
- return deco
-def log(action,details=''):
- db.session.add(Audit(user_id=session.get('uid'),action=action,details=details))
 @app.route('/')
 def index():return render_template('index.html',total=Question.query.filter_by(status='approved').count(),users=User.query.count())
 @app.route('/login',methods=['GET','POST'])
@@ -198,59 +187,9 @@ def result(aid):
  items=AttemptItem.query.filter_by(attempt_id=aid).order_by(AttemptItem.position).all()
  bydomain={d:{'earned':round(sum(i.points for i in items if i.question.domain==d and i.selected==i.question.answer),2),'possible':round(sum(i.points for i in items if i.question.domain==d),2)} for d in DOMAINS}
  return render_template('result.html',attempt=a,items=items,bydomain=bydomain)
-@app.route('/admin')
-@roles('admin','instructor')
-def admin():
- qs=Question.query.order_by(Question.id.desc()).limit(150).all();users=User.query.order_by(User.id.desc()).limit(150).all()
- return render_template('admin.html',questions=qs,users=users)
-@app.post('/admin/question')
-@roles('admin','instructor')
-def question_add():
- try:
-  opts=[request.form.get('o'+str(i),'').strip() for i in range(4)];answer=int(request.form.get('answer','-1'))
-  if request.form.get('domain') not in DOMAINS or not all(opts) or answer not in range(4) or not request.form.get('stem','').strip() or not request.form.get('explanation','').strip():raise ValueError('Invalid question')
-  q=Question(domain=request.form['domain'],topic=request.form.get('topic','General')[:120],difficulty=request.form.get('difficulty','medium'),stem=request.form['stem'].strip(),options_json=json.dumps(opts),answer=answer,explanation=request.form['explanation'].strip(),source='Original institutional item',status='draft');db.session.add(q);log('question_created',str(q.stem[:80]));db.session.commit();flash('Question created as draft')
- except (ValueError,KeyError):flash('Invalid question fields')
- return redirect(url_for('admin'))
-@app.post('/admin/question/<int:qid>/status')
-@roles('admin')
-def question_status(qid):
- q=db.get_or_404(Question,qid);status=request.form.get('status')
- if status not in ('approved','draft','archived'):abort(400)
- q.status=status;log('question_status',f'{qid}: {status}');db.session.commit();return redirect(url_for('admin'))
-@app.post('/admin/user/<int:uid>/role')
-@roles('admin')
-def user_role(uid):
- u=db.get_or_404(User,uid);role=request.form.get('role')
- if role not in ('student','instructor','admin'):abort(400)
- if u.id==current_user().id and role!='admin':abort(400,'Cannot demote yourself')
- u.role=role;log('role_change',f'{uid}: {role}');db.session.commit();return redirect(url_for('admin'))
-@app.post('/admin/import')
-@roles('admin','instructor')
-def import_questions():
- f=request.files.get('file')
- if not f or not f.filename.lower().endswith('.json'):abort(400,'JSON required')
- try:
-  data=json.load(f);assert isinstance(data,list) and len(data)<=1000
-  staged=[]
-  for x in data:
-   assert x['domain'] in DOMAINS and isinstance(x['options'],list) and len(x['options'])==4 and all(isinstance(y,str) and y.strip() for y in x['options']) and isinstance(x['answer'],int) and 0<=x['answer']<4 and x['stem'].strip() and x['explanation'].strip()
-   staged.append(Question(domain=x['domain'],topic=str(x.get('topic','General'))[:120],difficulty=str(x.get('difficulty','medium'))[:20],stem=x['stem'],options_json=json.dumps(x['options']),answer=x['answer'],explanation=x['explanation'],source=str(x.get('source','Imported original item'))[:255],status='draft'))
-  db.session.add_all(staged);log('question_import',str(len(staged)));db.session.commit();flash(f'Imported {len(staged)} draft questions; admin approval required')
- except (AssertionError,ValueError,KeyError,TypeError,UnicodeDecodeError,json.JSONDecodeError):db.session.rollback();flash('Import rejected: invalid JSON question format')
- return redirect(url_for('admin'))
-@app.route('/admin/export')
-@roles('admin','instructor')
-def export():
- output=io.StringIO();writer=csv.writer(output);writer.writerow(['id','domain','topic','difficulty','stem','status','correct_answer','explanation'])
- for q in Question.query.all():writer.writerow([q.id,q.domain,q.topic,q.difficulty,q.stem,q.status,q.options[q.answer],q.explanation])
- return Response(output.getvalue(),mimetype='text/csv',headers={'Content-Disposition':'attachment; filename=questionbank.csv'})
-@app.route('/admin/report')
-@roles('admin','instructor')
-def report():
- rows=db.session.query(User.name,User.email,Attempt.mode,Attempt.score,Attempt.max_points,Attempt.submitted_at).join(Attempt,Attempt.user_id==User.id).filter(Attempt.submitted_at.isnot(None)).order_by(Attempt.id.desc()).all()
- output=io.StringIO();writer=csv.writer(output);writer.writerow(['name','email','mode','score','maximum','submitted_at']);writer.writerows(rows)
- return Response(output.getvalue(),mimetype='text/csv',headers={'Content-Disposition':'attachment; filename=results.csv'})
+from admin_portal import build_admin_portal
+app.register_blueprint(build_admin_portal(db, User, Question, Attempt, Audit, DOMAINS))
+
 @app.cli.command('init-db')
 def init_db():
  db.create_all();print('Tables created')
