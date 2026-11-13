@@ -1,0 +1,17 @@
+{% if attempt.user_id == me.id %}
+<form class="card card-body mt-4" method="post" action="{{ url_for('reshuffle', aid=attempt.id) }}">
+  <input type="hidden" name="_csrf" value="{{ csrf }}">
+  <h3>Start a shuffled set</h3>
+  <p>Start with blank answers and a fresh timer. Your previous attempt and its saved answers stay in your history.</p>
+  {% if attempt.mode == 'practice' %}
+    {% set used_domains = items | map(attribute='question.domain') | unique | list %}
+    <label>Practice domain
+      <select class="form-select mb-3" name="domain">
+        <option value="ALL">All domains</option>
+        {% for d, name in domains.items() %}<option value="{{ d }}" {% if used_domains == [d] %}selected{% endif %}>{{ d }} — {{ name }}</option>{% endfor %}
+      </select>
+    </label>
+  {% endif %}
+  <button class="btn btn-outline-primary">Reset and reshuffle</button>
+</form>
+{% endif %}

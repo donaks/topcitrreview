@@ -124,19 +124,43 @@ def dashboard():
 def start():
  mode=request.form.get('mode','practice');domain=request.form.get('domain','ALL')
  if mode not in ('practice','mock') or domain not in (*DOMAINS,'ALL'):abort(400)
+ return create_attempt(mode, domain, set())
+
+@app.post('/exam/<int:aid>/reshuffle')
+@login_required
+def reshuffle(aid):
+    attempt = db.get_or_404(Attempt, aid)
+    if attempt.user_id != current_user().id:
+        abort(403)
+    domain = request.form.get('domain', 'ALL')
+    if domain not in (*DOMAINS, 'ALL'):
+        abort(400)
+    previous = {item.question_id for item in AttemptItem.query.filter_by(attempt_id=aid)}
+    return create_attempt(attempt.mode, domain, previous)
+
+def draw_questions(pool, count, previous):
+    unseen = [q for q in pool if q.id not in previous]
+    if len(unseen) >= count:
+        return random.sample(unseen, count)
+    repeats = [q for q in pool if q.id in previous]
+    selected = unseen + random.sample(repeats, count - len(unseen))
+    random.shuffle(selected)
+    return selected
+
+def create_attempt(mode, domain, previous):
  if mode=='mock':
   selected=[]
   for d,n in COUNTS.items():
    pool=Question.query.filter_by(domain=d,status='approved').all()
    if len(pool)<n:flash('Not enough approved questions for a 75-item mock exam');return redirect(url_for('dashboard'))
-   selected.extend((q,WEIGHTS[d]/n) for q in random.sample(pool,n))
+   selected.extend((q,WEIGHTS[d]/n) for q in draw_questions(pool,n,previous))
   random.shuffle(selected);minutes=150
  else:
   pool=Question.query.filter_by(status='approved')
   if domain!='ALL':pool=pool.filter_by(domain=domain)
   pool=pool.all()
   if not pool:flash('No approved questions available');return redirect(url_for('dashboard'))
-  selected=[(q,1) for q in random.sample(pool,min(10,len(pool)))];minutes=30
+  selected=[(q,1) for q in draw_questions(pool,min(10,len(pool)),previous)];minutes=30
  a=Attempt(user_id=current_user().id,mode=mode,deadline=now()+timedelta(minutes=minutes),max_points=sum(points for q,points in selected));db.session.add(a);db.session.flush()
  for i,(q,pts) in enumerate(selected):db.session.add(AttemptItem(attempt_id=a.id,question_id=q.id,position=i,points=pts))
  db.session.commit();return redirect(url_for('exam',aid=a.id))
@@ -240,7 +264,9 @@ def create_admin():
  db.session.commit();print('Admin created/updated')
 @app.cli.command('seed')
 def seed():
- with open(os.path.join(os.path.dirname(__file__),'questions.json'),encoding='utf8') as f:data=json.load(f)
+ data=[]
+ for filename in ('questions.json','questions_supplement.json'):
+  with open(os.path.join(os.path.dirname(__file__),filename),encoding='utf8') as f:data.extend(json.load(f))
  added=0
  for x in data:
   if Question.query.filter_by(stem=x['stem']).first():continue

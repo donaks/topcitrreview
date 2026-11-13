@@ -1,0 +1,342 @@
+[
+  {
+    "domain": "M1",
+    "topic": "Boundary testing",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A discount starts at 20 items. Which pair most directly tests the change in eligibility?",
+    "options": [
+      "10 and 30",
+      "20 and 21",
+      "19 and 20",
+      "18 and 19"
+    ],
+    "answer": 2,
+    "explanation": "19 is the last ineligible quantity and 20 is the first eligible quantity.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Algorithm analysis",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A sorted array contains 1024 distinct entries. After three unsuccessful midpoint comparisons in binary search, at most how many entries remain candidates?",
+    "options": [
+      "128",
+      "1021",
+      "256",
+      "512"
+    ],
+    "answer": 0,
+    "explanation": "Each comparison removes at least half the remaining candidates. Three halvings reduce 1024 to at most 128.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Resource management",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A file parser sometimes raises an exception. Which change ensures its file handle closes on both success and failure?",
+    "options": [
+      "Retry every failed read",
+      "Close only after returning the result",
+      "Open the file in a context manager",
+      "Increase the file buffer"
+    ],
+    "answer": 2,
+    "explanation": "The context manager runs cleanup when control leaves its block, including on an exception.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Regression testing",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A bug caused February 29 bookings to disappear. Which test most directly guards the fix?",
+    "options": [
+      "Save and retrieve a February 29 booking in a leap year",
+      "Check the booking page title",
+      "Count tests in the release suite",
+      "Measure booking page load time"
+    ],
+    "answer": 0,
+    "explanation": "The round trip exercises the date and the persistence behavior that failed.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M1",
+    "topic": "Queue processing",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A job queue starts empty. Jobs A and B arrive in that order, one job is served, then C arrives. Which job is next under FIFO?",
+    "options": [
+      "A",
+      "C",
+      "Either B or C at random",
+      "B"
+    ],
+    "answer": 3,
+    "explanation": "Serving A leaves B at the front. C joins behind B.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Aggregation",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A table holds invoice totals of 10, NULL and 20. What does SQL AVG(total) return?",
+    "options": [
+      "10",
+      "NULL",
+      "30",
+      "15"
+    ],
+    "answer": 3,
+    "explanation": "AVG ignores the null entry and divides 30 by the two non-null values.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Joins",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A report must show every department, including those with zero employees. Which join preserves every department row?",
+    "options": [
+      "Employees LEFT JOIN Departments",
+      "Departments INNER JOIN Employees",
+      "Departments LEFT JOIN Employees",
+      "A cross join followed by a salary filter"
+    ],
+    "answer": 2,
+    "explanation": "A left join retains unmatched rows from its left input.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Transaction design",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An order header and its lines must either all save or all disappear. Where should the application commit?",
+    "options": [
+      "Before validating the line items",
+      "After inserting the header and all lines in one transaction",
+      "After the header only",
+      "After each line separately"
+    ],
+    "answer": 1,
+    "explanation": "A single transaction allows one rollback to undo the entire order.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Data modeling",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "One student may take several courses and each course has several students. Where should the grade for a particular enrollment reside?",
+    "options": [
+      "On the course record alone",
+      "On the student record alone",
+      "On the department record",
+      "On a student-course enrollment record"
+    ],
+    "answer": 3,
+    "explanation": "The grade describes the relationship between a particular student and course.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M2",
+    "topic": "Counting",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A log contains customer IDs 4, 4, 7 and NULL. What is COUNT(DISTINCT customer_id)?",
+    "options": [
+      "3",
+      "1",
+      "4",
+      "2"
+    ],
+    "answer": 3,
+    "explanation": "Only the two distinct non-null IDs contribute to the count.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Capacity planning",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Each worker handles 25 requests per second. Assuming linear scaling, how many workers are needed for 90 requests per second?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "2"
+    ],
+    "answer": 1,
+    "explanation": "Three workers handle 75 requests per second. Four handle 100.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Recovery objectives",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A service must resume within two hours and lose at most ten minutes of data. Which value is its recovery point objective?",
+    "options": [
+      "110 minutes",
+      "10 minutes",
+      "2 hours",
+      "130 minutes"
+    ],
+    "answer": 1,
+    "explanation": "The recovery point objective measures tolerable data loss expressed as time.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Caching",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A product page shows an old price after the database is updated. Which action directly addresses an outdated cached entry?",
+    "options": [
+      "Compress the cached response",
+      "Invalidate the product cache entry when the update commits",
+      "Add a database replica without changing the cache",
+      "Increase the cache lifetime"
+    ],
+    "answer": 1,
+    "explanation": "Invalidation makes the next lookup fetch the committed price.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Reliability",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A background worker may receive the same payment notification twice. What best prevents posting the credit twice?",
+    "options": [
+      "Record a unique event ID atomically with the credit",
+      "Delay processing by one second",
+      "Increase the polling interval",
+      "Give both deliveries different event IDs"
+    ],
+    "answer": 0,
+    "explanation": "The unique event record and credit commit together so a repeat cannot apply another credit.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M3",
+    "topic": "Monitoring",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A service resolves most requests quickly but a few users report long delays. Which metric best exposes this tail behavior?",
+    "options": [
+      "Average response size",
+      "99th percentile request latency",
+      "Total registered users",
+      "Number of deployment branches"
+    ],
+    "answer": 1,
+    "explanation": "A high latency percentile captures slow requests that an average can conceal.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "Earned value",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A project has earned value 80 and actual cost 100 in the same units. What is its cost performance index?",
+    "options": [
+      "0.8",
+      "1.25",
+      "20",
+      "180"
+    ],
+    "answer": 0,
+    "explanation": "Cost performance index is earned value divided by actual cost.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "Scheduling",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Two tasks lasting three and five days start together. A two-day task starts after both finish. What is the earliest total duration?",
+    "options": [
+      "5 days",
+      "7 days",
+      "8 days",
+      "10 days"
+    ],
+    "answer": 1,
+    "explanation": "The successor waits for the longer five-day branch and then takes two days.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "Break-even analysis",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Automation costs 12000 to implement and saves 1500 per month with no recurring costs. When do cumulative savings equal the investment?",
+    "options": [
+      "After 6 months",
+      "After 10 months",
+      "After 8 months",
+      "After 12 months"
+    ],
+    "answer": 2,
+    "explanation": "Dividing the investment by monthly savings gives eight months.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "Process measurement",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A team wants to know whether a new approval workflow reduces waiting. Which measure most directly answers the question?",
+    "options": [
+      "Median elapsed time from submission to approval before and after rollout",
+      "Number of diagrams produced",
+      "Total lines of workflow code",
+      "Number of employees invited to training"
+    ],
+    "answer": 0,
+    "explanation": "Elapsed time measures the waiting outcome the team intended to improve.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  },
+  {
+    "domain": "M4",
+    "topic": "Acceptance criteria",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Which acceptance criterion can a reviewer verify most directly?",
+    "options": [
+      "The system is generally convenient",
+      "The payment experience feels modern",
+      "A receipt shows the order ID and total after a successful payment",
+      "Receipts look impressive"
+    ],
+    "answer": 2,
+    "explanation": "A reviewer can complete a payment and inspect the receipt for the two required fields.",
+    "source": "Original supplemental practice set",
+    "status": "approved"
+  }
+]

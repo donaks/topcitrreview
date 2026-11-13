@@ -3,7 +3,7 @@
 Original institutional practice material; **not official TOPCIT questions**. This is a working MVP for a VPS, not a security-certified examination platform.
 
 ## Features
-- 100 original single-answer MCQs, with explanations: M1=30, M2=27, M3=25, M4=18
+- 120 original single-answer MCQs across two seed files, with explanations: M1=35, M2=32, M3=30, M4=23
 - Student self-registration, login, role-based administrator/instructor/student access
 - Domain-based practice: 10 questions, 30 minutes
 - 75-question mock: M1 21, M2 19, M3 18, M4 17, 150 minutes; weighted to 1,000 points
@@ -97,3 +97,4 @@ authorized by your mail provider. Run Flask's init-db command before restarting
 the application to create the email_verification table on an existing database.
 Existing students verify at their next password login. Administrators and
 instructors continue using their existing sign-in flow.
+
